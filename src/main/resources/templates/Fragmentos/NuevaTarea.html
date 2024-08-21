@@ -1,0 +1,39 @@
+<div class="card" style="width: 100%;" th:fragment="nueva_tarea">
+  <div class="card-body">
+    <h4 class="card-title">Nueva tarea</h4>
+
+    <form th:action="@{/Task/guardar}" method="post" th:object="${nueva_tarea}">
+
+      <div class="mb-3">
+        <label for="titulo" class="form-label">Titulo</label>
+        <input type="text" class="form-control" name="_titulo" id="titulo" aria-describedby="helpId" placeholder=""
+          th:field="*{title}" required/>
+        <small id="helpId" class="form-text text-muted" hidden>Help text</small>
+      </div>
+
+      <div class="mb-3">
+        <label for="descripcion" class="form-label">Descripción</label>
+        <input type="text" class="form-control" name="_descripcion" id="descripcion" aria-describedby="helpId"
+          placeholder="" th:field="*{description}" />
+        <small id="helpId" class="form-text text-muted" hidden>Help text</small>
+      </div>
+
+      <div class="mb-3">
+        <label for="prioridad" class="form-label">City</label>
+        <select class="form-select form-select-lg" name="_prioridad" id="prioridad" th:field="*{priority}" required>
+          <option value="" selected>Select one...</option>
+          <option value="Alta">Alta</option>
+          <option value="Media">Media</option>
+          <option value="Baja">Baja</option>
+        </select>
+      </div>
+
+
+      <button type="submit" class="btn btn-primary">
+        Submit
+      </button>
+
+    </form>
+
+  </div>
+</div>

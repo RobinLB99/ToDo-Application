@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div class="container-fluid" th:fragment="CardsContainer">
+
+    <div th:if="${lista_tareas == null}">
+      <span>No se encontraron tareas.</span>
+    </div>
+
+    <div th:if="${lista_tareas != null}">
+      <div class="card mt-3" th:each= "Tarea:${lista_tareas}">
+        <div class="card-body">
+          <h4 class="card-title" th:text="${Tarea.title}"></h4>
+          <p class="card-text" th:text="${Tarea.description}"></p>
+        </div>
+      </div> 
+    </div>
+    
+  </div>
+
+</body>
+
+</html>

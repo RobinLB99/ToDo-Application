@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" lang="es">
+    <title>Mi aplicación</title>
+</head>
+
+<head th:replace="~{Fragmentos/bootstrap :: bootstrap-css}"></head>
+
+<body>
+    <header>
+        <nav th:replace="~{Fragmentos/mainComponents :: TopNavbar}"></nav>
+    </header>
+    <main style="height: 100vh;">
+
+        <div th:replace="~{Fragmentos/NuevaTarea :: nueva_tarea }"></div>
+        <div class="container-fluid d-flex flex-row g-3">
+            <div th:replace="~{Fragmentos/cardsContainer :: CardsContainer }"></div>
+        </div>
+
+    </main>
+
+    <a th:href="@{/Home}">Copywrite RobinLB99</a>
+
+    <div th:replace="~{Fragmentos/bootstrap :: bootstrap-js}"></div>
+</body>
+
+</html>
